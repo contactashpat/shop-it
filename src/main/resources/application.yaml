@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: shop-it
+  docker:
+    compose:
+      enabled: false
+
+message:
+  api:
+    url: https://api.message.com
+    key: dSHUyu===
+  docker:
+    compose:
+      enabled: false
+
