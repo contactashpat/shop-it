@@ -25,7 +25,10 @@ public class DemoApplication implements CommandLineRunner {
     @Bean
     CommandLineRunner runner(UserRepository repo) {
         return args -> {
-            repo.save(new User(null, "Ash", "ash@example.com"));
+            String email = "ash@example.com";
+            if (repo.findByEmail(email).isEmpty()) {
+                repo.save(new User(null, "Ash", email));
+            }
             repo.findAll().forEach(System.out::println);
         };
     }

@@ -1,0 +1,104 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------------< com.codewithash:shopit >-----------------------
+[INFO] Building shopit 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.5.3:run (default-cli) > test-compile @ shopit >>>
+[INFO] 
+[INFO] --- graphqlcodegen:1.61.5:generate (dgs-codegen) @ shopit ---
+[INFO] expanded schema paths: []
+[INFO] changed schema files: []
+[INFO] no files to generate
+[INFO] 
+[INFO] --- build-helper:3.6.1:add-source (add-dgs-source) @ shopit ---
+[INFO] Source directory: /Users/ashish/Downloads/shopit/target/generated-sources added.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ shopit ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ shopit ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ shopit ---
+[INFO] Copying 1 resource from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ shopit ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< spring-boot:3.5.3:run (default-cli) < test-compile @ shopit <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.5.3:run (default-cli) @ shopit ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.3)
+
+2025-07-01T16:35:38.381+01:00  INFO 10754 --- [           main] com.codewithash.shopit.DemoApplication   : Starting DemoApplication using Java 24.0.1 with PID 10754 (/Users/ashish/Downloads/shopit/target/classes started by ashish in /Users/ashish/Downloads/shopit)
+2025-07-01T16:35:38.382+01:00  INFO 10754 --- [           main] com.codewithash.shopit.DemoApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-07-01T16:35:38.401+01:00  INFO 10754 --- [           main] .s.b.d.c.l.DockerComposeLifecycleManager : Using Docker Compose file /Users/ashish/Downloads/shopit/compose.yaml
+2025-07-01T16:35:38.690+01:00  INFO 10754 --- [utReader-stderr] o.s.boot.docker.compose.core.DockerCli   : time="2025-07-01T16:35:38+01:00" level=warning msg="/Users/ashish/Downloads/shopit/compose.yaml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+2025-07-01T16:35:38.696+01:00  INFO 10754 --- [utReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container shopit-db-1  Starting
+2025-07-01T16:35:38.777+01:00  INFO 10754 --- [utReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container shopit-db-1  Started
+2025-07-01T16:35:38.777+01:00  INFO 10754 --- [utReader-stderr] o.s.boot.docker.compose.core.DockerCli   :  Container shopit-db-1  Waiting
+2025-07-01T16:35:39.292+01:00  INFO 10754 --- [utReader-stderr] o.s.boot.docker.compose.core.DockerCli   : container shopit-db-1 exited (1)
+2025-07-01T16:35:39.319+01:00 ERROR 10754 --- [           main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.boot.docker.compose.core.ProcessExitException: 'docker compose --file /Users/ashish/Downloads/shopit/compose.yaml --ansi never up --no-color --detach --wait' failed with exit code 1.
+
+Stdout:
+
+
+Stderr:
+time="2025-07-01T16:35:38+01:00" level=warning msg="/Users/ashish/Downloads/shopit/compose.yaml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+ Container shopit-db-1  Starting
+ Container shopit-db-1  Started
+ Container shopit-db-1  Waiting
+container shopit-db-1 exited (1)
+
+	at org.springframework.boot.docker.compose.core.ProcessRunner.run(ProcessRunner.java:97) ~[spring-boot-docker-compose-3.5.3.jar:3.5.3]
+	at org.springframework.boot.docker.compose.core.DockerCli.run(DockerCli.java:81) ~[spring-boot-docker-compose-3.5.3.jar:3.5.3]
+	at org.springframework.boot.docker.compose.core.DefaultDockerCompose.up(DefaultDockerCompose.java:56) ~[spring-boot-docker-compose-3.5.3.jar:3.5.3]
+	at org.springframework.boot.docker.compose.lifecycle.StartCommand.applyTo(StartCommand.java:51) ~[spring-boot-docker-compose-3.5.3.jar:3.5.3]
+	at org.springframework.boot.docker.compose.lifecycle.DockerComposeLifecycleManager.start(DockerComposeLifecycleManager.java:131) ~[spring-boot-docker-compose-3.5.3.jar:3.5.3]
+	at org.springframework.boot.docker.compose.lifecycle.DockerComposeListener.onApplicationEvent(DockerComposeListener.java:53) ~[spring-boot-docker-compose-3.5.3.jar:3.5.3]
+	at org.springframework.boot.docker.compose.lifecycle.DockerComposeListener.onApplicationEvent(DockerComposeListener.java:35) ~[spring-boot-docker-compose-3.5.3.jar:3.5.3]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:185) ~[spring-context-6.2.8.jar:6.2.8]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:178) ~[spring-context-6.2.8.jar:6.2.8]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:156) ~[spring-context-6.2.8.jar:6.2.8]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:138) ~[spring-context-6.2.8.jar:6.2.8]
+	at org.springframework.boot.context.event.EventPublishingRunListener.multicastInitialEvent(EventPublishingRunListener.java:136) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.context.event.EventPublishingRunListener.contextLoaded(EventPublishingRunListener.java:98) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$contextLoaded$4(SpringApplicationRunListeners.java:72) ~[spring-boot-3.5.3.jar:3.5.3]
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[na:na]
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:118) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:112) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.SpringApplicationRunListeners.contextLoaded(SpringApplicationRunListeners.java:72) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:416) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:317) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.3.jar:3.5.3]
+	at com.codewithash.shopit.DemoApplication.main(DemoApplication.java:17) ~[classes/:na]
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.752 s
+[INFO] Finished at: 2025-07-01T16:35:39+01:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.springframework.boot:spring-boot-maven-plugin:3.5.3:run (default-cli) on project shopit: Process terminated with exit code: 1 -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
