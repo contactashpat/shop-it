@@ -3,6 +3,9 @@ package com.codewithash.shopit;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.Column;
+import jakarta.persistence.PrePersist;
+import java.time.LocalDateTime;
 
 @Entity
 public class User {
@@ -12,6 +15,9 @@ public class User {
 
     private String name;
     private String email;
+
+    @Column(nullable = false, updatable = false)
+    private LocalDateTime createdAt;
 
     public User() {
         // Required by JPA
@@ -45,5 +51,14 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    @PrePersist
+    protected void onCreate() {
+        this.createdAt = LocalDateTime.now();
     }
 }
